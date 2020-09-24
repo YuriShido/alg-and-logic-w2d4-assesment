@@ -17,26 +17,17 @@ const halfSorted = function(arr) {
     // console.log(ascendingArr);
   let descendingArr = arr.slice(halfIndex, arr.lengh);
     // console.log(descendingArr);
-    for (i = 0; i < ascendingArr.length; i++) {
-      for(j = 0; j < ascendingArr.length; j++) {
-        if (ascendingArr[j] > ascendingArr[j + 1]) {
-          let tem = ascendingArr[j];
-          ascendingArr[j] = ascendingArr[j + 1];
-          ascendingArr[j + 1] = tem;
-        }
-      }
-    } 
-    console.log(ascendingArr);
+  // let resultArr =''  
+    ascendingArr = ascendingArr.sort((a,b) => {return a - b})
+    //  console.log(ascendingArr);
 
-    for(x = 0; x = descendingArr.length; x++) {
-      for(y = 0; y = descendingArr.length; y++) {
-        if(descendingArr[y] < descendingArr[y + 1]) {
-          let cur = descendingArr[y];
-          descendingArr[y] = descendingArr[y + 1];
-          descendingArr[y + 1] = cur;
-        }
-      }
-    } console.log(descendingArr);
+    descendingArr = descendingArr.sort((a,b) => {return b - a})
+    //  console.log(descendingArr);
+    
+     let resultArr = ascendingArr.concat(descendingArr);
+        
+    return resultArr;
+   
 };
  
 
